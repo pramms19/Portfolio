@@ -1,8 +1,9 @@
 import "./globals.css";
 import { Poppins, Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/theme_provider";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -17,9 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn(poppins.className, "font-sans", geist.variable)}>
+    <html
+      lang="en"
+      className={cn(poppins.className, "font-sans", geist.variable)}
+      suppressHydrationWarning
+    >
       <body>
-        <main>{children}</main>
+        <main>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {children}
+          </ThemeProvider>
+        </main>
       </body>
     </html>
   );
