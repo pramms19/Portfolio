@@ -20,10 +20,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(poppins.className, "font-sans", geist.variable)}
+      className={cn(
+        poppins.className,
+        "font-sans scroll-smooth",
+        geist.variable,
+      )}
       suppressHydrationWarning
     >
-      <body>
+      <body className="min-h-screen bg-background antialiased">
         <main>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
