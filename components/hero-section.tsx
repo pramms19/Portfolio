@@ -43,7 +43,7 @@ export default function HeroSection() {
           {/* Animated Divider Line */}
           <motion.div
             initial={{ width: 0 }}
-            animate={{ width: "80px" }} // Changed from 120 to a cleaner 80px
+            animate={{ width: "80px" }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
             className="border-t-2 border-primary my-4 mx-auto md:mx-0 min-w-md max-w-lg"
           />
@@ -58,16 +58,6 @@ export default function HeroSection() {
             <p className="text-muted-foreground font-light">|</p>
             <p>UI/UX Designer</p>
           </motion.div>
-
-          {/* <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="text-sm md:text-base text-muted-foreground max-w-md leading-relaxed"
-          >
-            I bridge the gap between design and code, building functional 
-            and user-centric web applications with clean, maintainable code.
-          </motion.p> */}
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}

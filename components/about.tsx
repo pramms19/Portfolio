@@ -13,7 +13,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-24 my-8 px-6 bg-muted/20 overflow-hidden">
+    <section id="about" className="py-24 my-8 px-4 md:px-8 bg-muted/20 overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
