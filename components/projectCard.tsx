@@ -28,6 +28,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         src={project.image}
         alt={project.title}
         fill
+        loading="eager"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
       />
@@ -38,7 +39,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       {/* === DEFAULT STATE: title + label badge at the bottom === */}
       <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-0 transition-all duration-500 group-hover:translate-y-4 group-hover:opacity-0">
         <div className="flex items-center gap-2 mb-1">
-          <Badge className="text-[10px] uppercase tracking-widest bg-primary/80 text-primary-foreground border-none px-2 py-0.5">
+          <Badge className="text-[10px] uppercase tracking-widest bg-secondary text-secondary-foreground border-none px-2 py-0.5">
             {project.label}
           </Badge>
         </div>
@@ -57,7 +58,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             className="h-8 w-8 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-sm"
             asChild
           >
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label="Live site">
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Live site"
+            >
               <ExternalLink className="h-3.5 w-3.5 text-white" />
             </a>
           </Button>
@@ -67,7 +73,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             className="h-8 w-8 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 backdrop-blur-sm"
             asChild
           >
-            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub repo">
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub repo"
+            >
               <Link className="h-3.5 w-3.5 text-white" />
             </a>
           </Button>
@@ -75,7 +86,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Bottom content */}
         <div>
-          <Badge className="text-[10px] uppercase tracking-widest bg-primary/80 text-primary-foreground border-none px-2 py-0.5 mb-2">
+          <Badge className="text-[10px] uppercase tracking-widest bg-secondary text-secondary-foreground border-none px-2 py-0.5 mb-2">
             {project.label}
           </Badge>
           <h3 className="text-white text-xl font-bold leading-tight mb-1">

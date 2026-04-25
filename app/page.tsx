@@ -11,11 +11,17 @@ export default function Home() {
     <div>
       <Navbar />
       <HeroSection />
-      <About />
+      <div className="bg-muted/30 border-y border-border/50">
+        <About />
+      </div>
       <Skills />
-      <Projects />
+      <div className="bg-muted/30 border-y border-border/50">
+        <Projects />
+      </div>
       <Contact />
-      <Footer />
+      <div className="bg-muted/30 border-y border-border/50">
+        <Footer />
+      </div>
     </div>
   );
 }
