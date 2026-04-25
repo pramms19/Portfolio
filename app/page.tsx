@@ -1,7 +1,8 @@
 import About from "@/components/about";
 import HeroSection from "@/components/hero-section";
 import Navbar from "@/components/navbar";
-import Skills from "@/components/skill";
+import Projects from "@/components/projects";
+import Skills from "@/components/skills";
 import Image from "next/image";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSection />
       <About />
       <Skills />
+      <Projects />
     </div>
   );
 }
