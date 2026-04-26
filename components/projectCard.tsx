@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Link } from "lucide-react";
+import { ExternalLink, MoveUpRight } from "lucide-react";
 
 export type Project = {
   id: number;
@@ -79,7 +79,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               rel="noopener noreferrer"
               aria-label="GitHub repo"
             >
-              <Link className="h-3.5 w-3.5 text-white" />
+              <MoveUpRight className="h-3.5 w-3.5 text-white" />
             </a>
           </Button>
         </div>

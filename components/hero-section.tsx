@@ -67,11 +67,17 @@ export default function HeroSection() {
             whileTap={{ scale: 0.95 }}
           >
             <Button
-              className="rounded-full mt-6 px-6 text-white text-base font-medium shadow-md transition-all"
+              asChild
+              className="group rounded-full mt-6 px-6 text-white text-base font-medium shadow-md transition-all"
               size="lg"
             >
-              Download CV
-              <Download className="ml-2 h-4 w-4" />
+              <a
+                href="/PramadaShrestha_CV.pdf"
+                download="PramadaShrestha_CV.pdf"
+              >
+                Download CV
+                <Download className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </motion.div>
         </div>
