@@ -31,10 +31,43 @@ const projects: Project[] = [
     title: "Chic Seduire",
     description: "E-Commerce Clothing Website for Men and Women.",
     image: "/s.png",
-    tags: ["React", "Tailwind","Postman"],
+    tags: ["React", "Tailwind", "Postman"],
     label: "Web",
     liveUrl: "https://chic-seduire.vercel.app/",
     githubUrl: "https://github.com/pramms19/ecommerce",
+  },
+  {
+    id: 4,
+    title: "Chic Seduire",
+    description: "E-Commerce Clothing Website for Men and Women.",
+    image: "/s.png",
+    tags: ["Figma", "Canva"],
+    label: "UI/UX",
+    liveUrl:
+      "https://www.figma.com/proto/ytrlof85EHH7amkIjcquvb/Chic-Seduire?node-id=32-340&t=7Iavs39ukqAIPCTI-1",
+    githubUrl: "#",
+  },
+  {
+    id: 5,
+    title: "Muktinath Itech",
+    description: "Innovative Solutions for Agriculture.",
+    image: "/m-t.png",
+    tags: ["Next", "Typescript", "Tailwind", "Shadcn", "Zod", "Resend"],
+    label: "Web",
+    liveUrl:
+      "https://muktinathitech.com.np/",
+    githubUrl: "https://github.com/muktinath-krishi/itech/tree/pramada",
+  },
+  {
+    id: 6,
+    title: "Pettle App",
+    description:
+      "Pet safety app with GPS tracking, alerts, and health monitoring.",
+    image: "/pettle.png",
+    tags: ["Figma", "Canva"],
+    label: "UI/UX",
+    liveUrl: "https://www.figma.com/proto/uUscvqMXN1fV7YAwslDCSZ/Pettle-App?node-id=0-1&t=NMnuC745Ujt52Wdp-1",
+    githubUrl: "#",
   },
 ];
 
