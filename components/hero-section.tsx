@@ -11,7 +11,7 @@ export default function HeroSection() {
       id="home"
       className="flex items-center justify-center px-4 md:px-8 pt-32 pb-10"
     >
-      <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-16 items-center max-w-5xl">
+      <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-16 items-center">
         {/* Image Container */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -24,13 +24,13 @@ export default function HeroSection() {
             alt="Pramada Shrestha"
             width={400}
             height={400}
-            className="rounded-2xl h-72 w-72 md:h-112 md:w-87 object-cover border border-border shadow-xl"
+            className="rounded-2xl h-72 md:h-112 w-72 md:w-87 object-cover border border-border shadow-xl"
             priority
           />
         </motion.div>
 
         {/* Content Container */}
-        <div className="text-center md:text-left">
+        <div className="text-center lg:text-left">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="text-lg md:text-xl font-semibold text-primary mb-4 flex justify-center md:justify-start gap-2"
+            className="text-lg md:text-xl font-semibold text-primary mb-4 flex justify-center lg:justify-start gap-2"
           >
             <p>Web Developer</p>
             <p className="text-muted-foreground font-light">|</p>

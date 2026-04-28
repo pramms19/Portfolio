@@ -4,7 +4,7 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 type Body = {
-  name: string;
+  fullname: string;
   email: string;
   subject: string;
   message: string;
@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   try {
     const body: Body = await request.json();
     console.log(body);
-    const { email, name, subject, message } = body;
+    const { email, fullname:name, subject, message } = body;
   console.log(email);
     const fromEmail = process.env.EMAIL_FROM || "Acme <onboarding@resend.dev>";
     const contactEmail = process.env.EMAIL_TO || "delivered@resend.dev";

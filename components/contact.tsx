@@ -2,26 +2,64 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
- 
-const contactSchema = z.object({
-  fullname: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(7, "Please enter a valid phone number"),
-  reason: z.string().min(3, "Subject must be at least 3 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+import { toast } from "sonner";
+import { Card, CardContent } from "./ui/card";
+import { Field, FieldError, FieldGroup } from "./ui/field";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroupTextarea,
+} from "./ui/input-group";
+import { Spinner } from "./ui/spinner";
+
+const FormSchema = z.object({
+  fullname: z.string().min(10, "Username must be at least 10 characters"),
+  email: z.string().email("Invalid email"),
+  subject: z.string().min(1, "Subject must be at least 10 characters."),
+  message: z
+    .string()
+    .min(10, "Description must be at least 20 characters.")
+    .max(100, "Description must be at most 100 characters."),
 });
+
+type FormData = z.infer<typeof FormSchema>;
+
 export default function Contact() {
+  const form = useForm<FormData>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      fullname: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+  });
+
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      toast.success("Message Sent", {
+        description: "Your message has been sent.",
+      });
+      //Reset form
+      form.reset();
+    } else {
+      toast.error("Failed to send message");
+    }
+  }
+
   return (
-    <section
-      id="contact"
-      className="py-24 px-4 md:px-8 overflow-hidden"
-    >
+    <section id="contact" className="py-24 px-4 md:px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-14 text-center">
           Contact <span className="text-primary">Me</span>
@@ -92,32 +130,115 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-background border border-border p-8 rounded-3xl shadow-sm"
           >
-            <form className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <Input
-                  placeholder="Name"
-                  className="bg-muted/30 border-none rounded-xl h-12"
-                />
-                <Input
-                  placeholder="Email"
-                  type="email"
-                  className="bg-muted/30 border-none rounded-xl h-12"
-                />
-              </div>
-              <Input
-                placeholder="Subject"
-                className="bg-muted/30 border-none rounded-xl h-12"
-              />
-              <Textarea
-                placeholder="Your Message"
-                className="bg-muted/30 border-none rounded-xl min-h-38"
-              />
-              <Button className="w-full h-12 rounded-xl text-white font-bold gap-2">
-                Send Message <Send className="w-4 h-4" />
-              </Button>
-            </form>
+            <Card className="bg-background border border-border px-2 md:px-4 py-6 md:py-8 rounded-3xl shadow-sm">
+              <CardContent>
+                <form
+                  className="space-y-4"
+                  onSubmit={form.handleSubmit(onSubmit)}
+                >
+                  <FieldGroup>
+                    <div className="grid grid-cols-2 gap-4">
+                      <Controller
+                        name="fullname"
+                        control={form.control}
+                        render={({ field, fieldState }) => (
+                          <Field data-invalid={fieldState.invalid}>
+                            <Input
+                              {...field}
+                              aria-invalid={fieldState.invalid}
+                              placeholder="Name"
+                              className="bg-muted/30 border-none rounded-xl"
+                            />
+                            {fieldState.invalid && (
+                              <FieldError errors={[fieldState.error]} />
+                            )}
+                          </Field>
+                        )}
+                      />
+
+                      <Controller
+                        name="email"
+                        control={form.control}
+                        render={({ field, fieldState }) => (
+                          <Field data-invalid={fieldState.invalid}>
+                            <Input
+                              {...field}
+                              aria-invalid={fieldState.invalid}
+                              placeholder="Email"
+                              className="bg-muted/30 border-none rounded-xl"
+                            />
+                            {fieldState.invalid && (
+                              <FieldError errors={[fieldState.error]} />
+                            )}
+                          </Field>
+                        )}
+                      />
+                    </div>
+
+                    <Controller
+                      name="subject"
+                      control={form.control}
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <Input
+                            {...field}
+                            aria-invalid={fieldState.invalid}
+                            placeholder="Subject"
+                            className="bg-muted/30 border-none rounded-xl"
+                          />
+                          {fieldState.invalid && (
+                            <FieldError errors={[fieldState.error]} />
+                          )}
+                        </Field>
+                      )}
+                    />
+
+                    <Controller
+                      name="message"
+                      control={form.control}
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <InputGroup className="bg-muted/30 border-none rounded-xl min-h-38">
+                            <InputGroupTextarea
+                              {...field}
+                              rows={6}
+                              placeholder="Your Message"
+                              aria-invalid={fieldState.invalid}
+                            />
+                            <InputGroupAddon align="block-end">
+                              <InputGroupText className="tabular-nums text-xs font-normal text-muted-foreground/50">
+                                {field.value.length}/100 characters
+                              </InputGroupText>
+                            </InputGroupAddon>
+                          </InputGroup>
+                          {fieldState.invalid && (
+                            <FieldError errors={[fieldState.error]} />
+                          )}
+                        </Field>
+                      )}
+                    />
+                  </FieldGroup>
+
+                  <Field orientation="horizontal">
+                    <Button
+                      type="submit"
+                      disabled={form.formState.isSubmitting}
+                      className="w-full h-12 rounded-xl text-white font-bold gap-2"
+                    >
+                      {form.formState.isSubmitting ? (
+                        <div className="flex gap-2 items-center justify-center">
+                          <Spinner />
+                          <p> Sending Message...</p>
+                        </div>
+                      ) : (
+                        "Send Message"
+                      )}
+                    </Button>
+                  </Field>
+                </form>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </div>
