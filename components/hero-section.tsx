@@ -73,7 +73,7 @@ export default function HeroSection() {
             >
               <a
                 href="/Pramada_Shrestha_CV.pdf"
-                download="Pramada_Shrestha_CV.pdf"
+                download="PramadaShrestha_CV.pdf"
               >
                 Download CV
                 <Download className="ml-2 h-4 w-4" />
