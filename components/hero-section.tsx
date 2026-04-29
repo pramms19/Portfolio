@@ -71,10 +71,7 @@ export default function HeroSection() {
               className="group rounded-full mt-6 px-6 text-white text-base font-medium shadow-md transition-all"
               size="lg"
             >
-              <a
-                href="/Pramada_Shrestha_CV.pdf"
-                download="PramadaShrestha_CV.pdf"
-              >
+              <a href="/Pramada_CV.pdf" download="Pramada_CV.pdf">
                 Download CV
                 <Download className="ml-2 h-4 w-4" />
               </a>
