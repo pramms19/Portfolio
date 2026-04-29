@@ -45,7 +45,6 @@ const projects: Project[] = [
     label: "UI/UX",
     liveUrl:
       "https://www.figma.com/proto/ytrlof85EHH7amkIjcquvb/Chic-Seduire?node-id=32-340&t=7Iavs39ukqAIPCTI-1",
-    githubUrl: "#",
   },
   {
     id: 5,
@@ -54,8 +53,7 @@ const projects: Project[] = [
     image: "/m-t.png",
     tags: ["Next", "Typescript", "Tailwind", "Shadcn", "Zod", "Resend"],
     label: "Web",
-    liveUrl:
-      "https://muktinathitech.com.np/",
+    liveUrl: "https://muktinathitech.com.np/",
     githubUrl: "https://github.com/muktinath-krishi/itech/tree/pramada",
   },
   {
@@ -66,8 +64,8 @@ const projects: Project[] = [
     image: "/pettle.png",
     tags: ["Figma", "Canva"],
     label: "UI/UX",
-    liveUrl: "https://www.figma.com/proto/uUscvqMXN1fV7YAwslDCSZ/Pettle-App?node-id=0-1&t=NMnuC745Ujt52Wdp-1",
-    githubUrl: "#",
+    liveUrl:
+      "https://www.figma.com/proto/uUscvqMXN1fV7YAwslDCSZ/Pettle-App?node-id=0-1&t=NMnuC745Ujt52Wdp-1",
   },
 ];
 

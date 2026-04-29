@@ -13,7 +13,7 @@ export type Project = {
   tags: string[];
   label: string;
   liveUrl: string;
-  githubUrl: string;
+  githubUrl?: string;
 };
 
 interface ProjectCardProps {
@@ -67,6 +67,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <ExternalLink className="h-3.5 w-3.5 text-white" />
             </a>
           </Button>
+          {project.githubUrl && (
           <Button
             size="icon"
             variant="secondary"
@@ -82,6 +83,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <MoveUpRight className="h-3.5 w-3.5 text-white" />
             </a>
           </Button>
+          )}
         </div>
 
         {/* Bottom content */}

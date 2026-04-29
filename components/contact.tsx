@@ -78,9 +78,8 @@ export default function Contact() {
               <div>
                 <h3 className="text-2xl font-semibold">Contact Info</h3>
                 <p className="border-l-4 border-primary pl-4 py-2 text-muted-foreground text-justify leading-relaxed my-4">
-                  I am currently open to new opportunities and collaborations.
-                  Whether you have a question or just want to say hi, I will try
-                  my best to get back to you!
+                  I am open to new opportunities and collaborations.
+                  Feel free to reach out - I&apos;d love to hear from you!
                 </p>
               </div>
 

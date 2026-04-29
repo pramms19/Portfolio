@@ -29,10 +29,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section
-      id="about"
-      className="py-24 px-4 md:px-8 overflow-hidden"
-    >
+    <section id="about" className="py-24 px-4 md:px-8 overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -55,12 +52,11 @@ export default function AboutSection() {
           >
             <h3 className="text-2xl font-semibold">Introduction</h3>
             <p className="border-l-4 border-primary pl-4 py-2 text-muted-foreground text-justify leading-relaxed">
-              I am a creative developer focused on building functional,
-              user-centric web applications. I bridge the gap between design and
-              code, leveraging my background in Graphic Design to create
-              visually engaging and technically sound digital experiences. I
-              thrive in collaborative environments and am committed to writing
-              clean, maintainable code.
+              I am a creative developer, passionate about building functional,
+              user-centric web applications. Leveraging my background in Graphic
+              Design, I create visually engaging and technically sound digital
+              experiences. I enjoy working in collaborative environments and am
+              committed to writing clean, maintainable code.
             </p>
           </motion.div>
 
