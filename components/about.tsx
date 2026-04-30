@@ -37,7 +37,7 @@ export default function AboutSection() {
         transition={{ duration: 0.5 }}
         className="max-w-6xl mx-auto"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-14 text-center">
+        <h2 className="text-2xl md:text-4xl font-bold mb-10 md:mb-14 text-center">
           About <span className="text-primary">Me</span>
         </h2>
 
@@ -50,8 +50,8 @@ export default function AboutSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-semibold">Introduction</h3>
-            <p className="border-l-4 border-primary pl-4 py-2 text-muted-foreground text-justify leading-relaxed">
+            <h3 className="text-lg md:text-2xl font-semibold">Introduction</h3>
+            <p className="border-l-2 md:border-l-4 border-primary pl-4 py-0 md:py-2 text-muted-foreground text-justify leading-relaxed text-sm md:text-base">
               I am a creative developer, passionate about building functional,
               user-centric web applications. Leveraging my background in Graphic
               Design, I create visually engaging and technically sound digital

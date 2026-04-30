@@ -76,14 +76,14 @@ export default function Projects() {
     projects.filter((p) => p.label === category);
 
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="py-24 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl font-bold mb-10 text-center"
+          className="text-2xl md:text-4xl font-bold mb-10 text-center"
         >
           My <span className="text-primary">Projects</span>
         </motion.h2>
@@ -97,12 +97,12 @@ export default function Projects() {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="w-full flex justify-center"
           >
-            <TabsList className="bg-transparent border rounded-full px-8 flex gap-8 lg:gap-16 mb-14 shadow-xs">
+            <TabsList className="bg-transparent border rounded-full px-4 md:px-8 flex gap-6 md:gap-10 lg:gap-16 mb-10 md:mb-14 shadow-xs">
               {categories.map((category) => (
                 <TabsTrigger
                   key={category}
                   value={category}
-                  className="relative bg-transparent border-none shadow-none px-0 py-2 rounded-none text-muted-foreground/80 data-[state=active]:text-primary data-[state=active]:bg-transparent text-base md:text-xl transition-all after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-primary after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
+                  className="relative bg-transparent border-none shadow-none px-0 py-1 md:py-2 rounded-none text-muted-foreground/80 data-[state=active]:text-primary data-[state=active]:bg-transparent text-sm sm:text-base md:text-xl transition-all after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-primary after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
                 >
                   {category}
                 </TabsTrigger>

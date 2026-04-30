@@ -38,7 +38,7 @@ export default function Skills() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-3xl md:text-4xl font-bold mb-14 text-center"
+        className="text-2xl md:text-4xl font-bold mb-10 md:mb-14 text-center"
       >
         My <span className="text-primary">Skills</span>
       </motion.h2>
@@ -52,12 +52,12 @@ export default function Skills() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="w-full flex justify-center"
         >
-          <TabsList className="bg-transparent border rounded-full px-8 flex gap-8 lg:gap-16 mb-14 shadow-xs">
+          <TabsList className="bg-transparent border rounded-full px-4 md:px-8 flex gap-4 sm:gap-6 md:gap-10 lg:gap-16 mb-10 md:mb-14 shadow-xs">
             {skills.map((category) => (
               <TabsTrigger
                 key={category.id}
                 value={category.id}
-                className="relative bg-transparent border-none shadow-none px-0 py-2 rounded-none text-muted-foreground/80 data-[state=active]:text-primary data-[state=active]:bg-transparent text-base md:text-xl transition-all after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-primary after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
+                className="relative bg-transparent border-none shadow-none px-0 py-1 md:py-2 rounded-none text-muted-foreground/80 data-[state=active]:text-primary data-[state=active]:bg-transparent text-sm sm:text-base md:text-xl transition-all after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-primary after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
               >
                 {category.label}
               </TabsTrigger>
@@ -86,7 +86,7 @@ export default function Skills() {
                   >
                     <Badge
                       variant="secondary"
-                      className="px-6 py-3.5 text-sm font-medium bg-secondary/40 hover:bg-secondary hover:text-secondary-foreground transition-all rounded-full border-none shadow-sm cursor-default"
+                      className="px-3 md:px-6 py-1.5 md:py-3.5 text-xs md:text-sm font-medium bg-secondary/40 hover:bg-secondary hover:text-secondary-foreground transition-all rounded-full border-none shadow-sm cursor-default"
                     >
                       {skill}
                     </Badge>

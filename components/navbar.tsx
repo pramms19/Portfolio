@@ -73,13 +73,13 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {open && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md p-4 space-y-3 rounded-2xl mt-2 border border-border shadow-xl animate-in slide-in-from-top-2">
+        <div className="md:hidden bg-background/95 backdrop-blur-md p-4 space-y-2 rounded-2xl mt-2 border border-border shadow-lg animate-in slide-in-from-top-2">
           {navItems.map((item) => (
             <a
               key={item.id}
               href={item.to}
               onClick={(e) => handleScroll(e, item.to)}
-              className="block text-foreground hover:text-primary font-medium transition-colors px-2 py-1"
+              className="block text-sm md:text-base text-foreground hover:text-primary font-medium transition-colors px-2 py-1"
             >
               {item.name}
             </a>

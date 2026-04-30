@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="flex items-center justify-center px-4 md:px-8 pt-32 pb-10"
+      className="flex items-center justify-center px-4 md:px-8 pt-26 md:pt-32 pb-10"
     >
       <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-16 items-center">
         {/* Image Container */}
@@ -35,7 +35,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-5xl font-bold tracking-tight"
+            className="text-2xl md:text-5xl font-bold tracking-tight"
           >
             Pramada Shrestha
           </motion.h1>
@@ -45,14 +45,14 @@ export default function HeroSection() {
             initial={{ width: 0 }}
             animate={{ width: "80px" }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-            className="border-t-2 border-primary my-4 mx-auto md:mx-0 min-w-md max-w-lg"
+            className="border-t-2 border-primary my-4 mx-auto md:mx-0 max-w-lg"
           />
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="text-lg md:text-xl font-semibold text-primary mb-4 flex justify-center lg:justify-start gap-2"
+            className="text-base md:text-xl font-semibold text-primary mb-4 flex justify-center lg:justify-start gap-2"
           >
             <p>Web Developer</p>
             <p className="text-muted-foreground font-light">|</p>
@@ -68,7 +68,7 @@ export default function HeroSection() {
           >
             <Button
               asChild
-              className="group rounded-full mt-6 px-6 text-white text-base font-medium shadow-md transition-all"
+              className="group rounded-full mt-3 md:mt-6 px-3 md:px-6 text-white text-sm md:text-base font-medium shadow-md transition-all"
               size="lg"
             >
               <a href="/Pramada_CV.pdf" download="Pramada_CV.pdf">
