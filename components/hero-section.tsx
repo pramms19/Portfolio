@@ -59,7 +59,7 @@ export default function HeroSection() {
             <p>UI/UX Designer</p>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
@@ -76,7 +76,7 @@ export default function HeroSection() {
                 <Download className="ml-2 h-4 w-4" />
               </a>
             </Button>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
