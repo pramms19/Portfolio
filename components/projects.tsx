@@ -23,8 +23,8 @@ const projects: Project[] = [
     image: "/pettle.png",
     tags: ["React", "Firebase", "Expo"],
     label: "App",
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "/PettlePresentation.pdf",
+    githubUrl: "https://github.com/pramms19/Pettle",
   },
   {
     id: 3,

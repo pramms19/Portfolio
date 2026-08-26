@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "./ui/button";
-import { Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
